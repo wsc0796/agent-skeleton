@@ -1,0 +1,33 @@
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.mypy_cache/
+.ruff_cache/
+
+# Env & data
+.env
+*.db
+*.sqlite3
+.coverage
+htmlcov/
+data/
+
+# Logs
+*.log
+
+# UI
+src/ui/node_modules/
+src/ui/dist/

@@ -1,0 +1,13 @@
+[project]
+name = "agent-skeleton"
+version = "0.1.0"
+description = "Reusable Agent project skeleton — customize tools and personas per JD, core stays unchanged."
+requires-python = ">=3.12"
+authors = [{ name = "wsc0796" }]
+
+[project.scripts]
+agent = "src.main:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
