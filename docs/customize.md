@@ -1,17 +1,18 @@
 # How to Add Business Tools
 
-> 30-minute guide: adapt agent-skeleton to any company's job description.
+> Build a minimal business-tool prototype in ~30 minutes.
+> Production integration with real CRM/DB/APIs requires additional engineering.
 
 ## Overview
 
-Only two directories change per project:
+Most business adaptation happens in two directories:
 
 ```text
 src/tools/business/    ← swap in your tools
 src/agents/personas/   ← swap in your agent config
 ```
 
-`src/core/`, `src/server/`, `src/ui/` never change.
+`src/core/`, `src/server/`, `src/ui/` are designed as stable layers — most changes happen in `tools/` and `agents/`.
 
 ## Step 1: Define Your Tools
 
@@ -112,4 +113,18 @@ examples/
         └── sample_kb_article.txt
 ```
 
-**Time: ~30 minutes from empty directory to working agent.**
+**Time: ~30 minutes for a minimal prototype.**
+
+## What this covers vs. what's missing
+
+| Covered by this guide | Requires additional engineering |
+|-----------------------|--------------------------------|
+| New tool definitions | Real CRM/DB/API authentication |
+| Agent persona config | Production error handling |
+| Test scaffolding | Performance tuning |
+| Server registration | Rate limiting & monitoring |
+| Sample data | Data migration & persistence |
+
+This guide produces a working prototype you can demo. Production integration
+with company-specific systems requires additional work on auth, reliability,
+and data integration.

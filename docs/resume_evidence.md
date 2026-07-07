@@ -6,26 +6,25 @@
 
 ### Bullet 1: Agent Architecture (Backend Engineering)
 
-> **Designed and implemented a reusable Agent project skeleton with pluggable architecture.**
-> Built a three-layer separation (core/tools/agents) where the core ReAct loop,
-> tool registry, and LLM client remain unchanged across projects, while business tools
-> and agent personas are swappable per company JD. All tools use Pydantic for argument
-> validation, and the system includes built-in safety controls: tool whitelist,
-> duplicate-call detection, max-iteration cap, and AST-based calculator (no eval).
+> **Designed and implemented a lightweight Agent Skeleton with a hand-written ReAct loop**
+> (44 pytest cases, 6 builtin tools, 4 job matching tools), Pydantic-based Tool Registry,
+> OpenAI-compatible LLM client, and memory module. Added safety controls: tool whitelist,
+> max-iteration cap, duplicate-call detection, AST-based calculator, and file path whitelist.
+> Built FastAPI REST + SSE dual interface for agent communication, and a React + Vite
+> Agent Chat UI for execution trace visualization. GitHub Actions CI with ruff + pytest.
 
 **Evidence files:**
-- `src/core/agent_loop.py` — ReAct loop with visible thinking chain
+- `src/core/agent_loop.py` — ReAct loop with execution trace
 - `src/core/tool_registry.py` — Pydantic-validated tool registration
 - `src/core/llm_client.py` — OpenAI-compatible client with retry + streaming
 - `src/tools/builtin/__init__.py` — Safe calculator (AST parser, not eval)
 
 ### Bullet 2: API + SSE Streaming (Full-Stack)
 
-> **Built FastAPI server with REST + SSE dual interfaces** for agent communication.
-> Synchronous `/api/v1/chat` returns complete agent results including step-by-step
-> reasoning trace. Streaming `/api/v1/chat/stream` emits SSE events
-> (agent_started → tool_call_started → tool_call_finished → final_answer),
-> enabling React UI to visualize the agent's thinking process in real-time.
+> **Built job matching business example** with 4 tools (analyze_jd → match_resume →
+> generate_gap_report → generate_study_plan) covering 15 tech keywords across 4 job types.
+> Tools are independently testable (rule engine, no LLM required). Documented customization
+> guide for adapting to other business domains (customer support, code review, data analysis).
 
 **Evidence files:**
 - `src/server/main.py` — FastAPI app with CORS
@@ -71,13 +70,22 @@
 > "Calculator uses AST parsing, not eval — code injection is impossible.
 > File reader blocks absolute paths, `..` traversal, and sensitive filenames like `.env`.
 > Agent tools are whitelist-only, no filesystem/shell/URL access by default.
-> AI call logs store only hash + truncated summaries, not full prompts."
+> AI call logs store only hash and truncated summaries. See `docs/security.md`."
 
-### Q4: How would you adapt this for a different company?
+### Q4: Is this production-ready?
 
-> "Swap `src/tools/business/` and `src/agents/personas/`. Everything else stays unchanged.
-> For a customer support agent: replace job_matching tools with CRM lookup,
-> ticket creation, knowledge base search. Takes about 30 minutes to swap."
+> "No. This is an internship-facing learning project and reusable skeleton.
+> It demonstrates core Agent patterns: ReAct loop, tool registry, validation,
+> SSE execution trace, and pluggable business tools. For production, I would add
+> authentication, rate limiting, persistent trace storage, prompt-injection defense,
+> and observability. I documented all current limitations in `docs/limitations.md`."
+
+### Q5: How would you adapt this for a different company?
+
+> "Swap `src/tools/business/` and `src/agents/personas/`. Most adaptation stays within
+> those two directories. For a customer support agent: replace job_matching tools with
+> CRM lookup, ticket creation, knowledge base search. A minimal prototype takes ~30 minutes;
+> production integration with real CRM/DB/APIs requires additional engineering."
 
 ## Test Coverage Map
 

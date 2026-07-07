@@ -52,11 +52,11 @@ Browser (React UI)                curl / Postman
 
 | Layer | Directory | Rule |
 |-------|-----------|------|
-| 🔒 Core | `src/core/` | Never changes across projects |
-| 🔧 Tools | `src/tools/` | Swap `business/` per JD |
-| 🎯 Agents | `src/agents/` | Swap `personas/` per use case |
-| 🔒 Server | `src/server/` | Stable REST + SSE patterns |
-| 🔒 UI | `src/ui/` | Stable Agent Chat interface |
+| Core | `src/core/` | Designed as stable reusable foundation |
+| Tools | `src/tools/` | Swap `business/` per JD |
+| Agents | `src/agents/` | Swap `personas/` per use case |
+| Server | `src/server/` | REST + SSE patterns |
+| UI | `src/ui/` | Agent Chat interface |
 
 ## Agent Step Trace (SSE Events)
 
@@ -90,4 +90,4 @@ To adapt for a different company/role:
 2. Write a new persona in `src/agents/personas/` (copy `job_matcher.py`)
 3. Register the persona in `src/server/routes/chat.py`
 4. Add sample data in `examples/`
-5. **Everything else stays unchanged.**
+5. Most adaptation should stay within `tools/business` and `agents/personas`
