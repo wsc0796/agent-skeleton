@@ -108,7 +108,9 @@ Guide: [docs/customize.md](docs/customize.md)
 | [Demo Guide](docs/demo.md) | 3-minute demo script with expected output |
 | [API Reference](docs/api.md) | Endpoints, request/response schemas, error format |
 | [Security](docs/security.md) | Tool whitelist, AST calculator, path whitelist |
-| [Limitations](docs/limitations.md) | What this project is NOT |
+| [Limitations](docs/limitations.md) | Honest boundaries of this project |
+| [Evaluation](docs/evaluation.md) | How agent behavior is tested |
+| [Platform Mapping](docs/platform_mapping.md) | How concepts map to Dify / n8n / LangChain |
 
 ## How It Works
 

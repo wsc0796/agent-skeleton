@@ -70,7 +70,7 @@
 > "Calculator uses AST parsing, not eval — code injection is impossible.
 > File reader blocks absolute paths, `..` traversal, and sensitive filenames like `.env`.
 > Agent tools are whitelist-only, no filesystem/shell/URL access by default.
-> AI call logs store only hash and truncated summaries. See `docs/security.md`."
+> Current logging is basic. Planned: store prompt hash and truncated summaries instead of full prompts. See `docs/security.md`."
 
 ### Q4: Is this production-ready?
 
