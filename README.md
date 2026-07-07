@@ -74,9 +74,13 @@ ruff check .                       # Code quality
 
 ## Current Status
 
-**Week 1 complete** — core engine: LLM client, ReAct loop, tool registry, memory, 6 built-in tools, 19 tests.
+**All 3 weeks complete — 44 tests, ruff clean, CI green.**
 
-**Next (Week 2):** FastAPI server with SSE streaming + job_matching business tools.
+| Week | Delivered |
+|------|-----------|
+| Week 1 | Core engine: LLM client, ReAct loop, tool registry, memory, 6 built-in tools |
+| Week 2 | FastAPI server + SSE streaming + job matcher persona + 4 business tools |
+| Week 3 | React Agent Chat UI + calculator safety fix (AST parser, no eval) + sample data |
 
 ## Comparison
 
