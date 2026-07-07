@@ -70,7 +70,7 @@
 > "Calculator uses AST parsing, not eval — code injection is impossible.
 > File reader blocks absolute paths, `..` traversal, and sensitive filenames like `.env`.
 > Agent tools are whitelist-only, no filesystem/shell/URL access by default.
-> Current logging is basic. Planned: store prompt hash and truncated summaries instead of full prompts. See `docs/security.md`."
+> Current logging is basic. Planned: AI call logs should store hashes and summaries instead of full prompts. See `docs/security.md`."
 
 ### Q4: Is this production-ready?
 
@@ -82,10 +82,10 @@
 
 ### Q5: How would you adapt this for a different company?
 
-> "Swap `src/tools/business/` and `src/agents/personas/`. Most adaptation stays within
-> those two directories. For a customer support agent: replace job_matching tools with
-> CRM lookup, ticket creation, knowledge base search. A minimal prototype takes ~30 minutes;
-> production integration with real CRM/DB/APIs requires additional engineering."
+> "Swap `src/tools/business/` and `src/agents/personas/`. Most adaptation happens in
+> tools and personas. For a customer support agent: replace job_matching tools with
+> CRM lookup, ticket creation, knowledge base search. A minimal demo prototype can be
+> created quickly; real API/DB/permission integration requires additional work."
 
 ## Test Coverage Map
 
@@ -117,7 +117,7 @@ curl -X POST http://localhost:8000/api/v1/chat \
   -H "Content-Type: application/json" \
   -d '{"message": "Analyze: AI Agent intern, requires Python, LLM, FastAPI"}'
 
-# Stream agent thinking
+# Stream agent step trace
 curl -N -X POST http://localhost:8000/api/v1/chat/stream \
   -H "Content-Type: application/json" \
   -d '{"message": "Match my skills: Python, FastAPI, Docker"}'

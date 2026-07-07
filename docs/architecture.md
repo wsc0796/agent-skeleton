@@ -23,7 +23,8 @@ Browser (React UI)                curl / Postman
 │  ┌──────────────────────────────────┐    │
 │  │       ReActAgent.run()           │    │
 │  │  ┌──────────────────────────┐    │    │
-│  │  │ 1. LLM returns JSON      │    │    │
+│  │  │ 1. LLM returns structured│    │    │
+│  │  │    action JSON           │    │    │
 │  │  │ 2. "tool_call" → execute │    │    │
 │  │  │ 3. Tool result → LLM     │    │    │
 │  │  │ 4. "final" → answer      │    │    │
@@ -52,9 +53,9 @@ Browser (React UI)                curl / Postman
 
 | Layer | Directory | Rule |
 |-------|-----------|------|
-| Core | `src/core/` | Designed as stable reusable foundation |
-| Tools | `src/tools/` | Swap `business/` per JD |
-| Agents | `src/agents/` | Swap `personas/` per use case |
+| Core | `src/core/` | Stable reusable core; changes should be rare and reviewed |
+| Tools | `src/tools/` | Most business adaptation should happen in tools/personas/examples |
+| Agents | `src/agents/` | Most business adaptation should happen in tools/personas/examples |
 | Server | `src/server/` | REST + SSE patterns |
 | UI | `src/ui/` | Agent Chat interface |
 
@@ -90,4 +91,4 @@ To adapt for a different company/role:
 2. Write a new persona in `src/agents/personas/` (copy `job_matcher.py`)
 3. Register the persona in `src/server/routes/chat.py`
 4. Add sample data in `examples/`
-5. Most adaptation should stay within `tools/business` and `agents/personas`
+5. Most business adaptation should happen in tools/personas/examples

@@ -1,7 +1,7 @@
 # How to Add Business Tools
 
-> Build a minimal business-tool prototype in ~30 minutes.
-> Production integration with real CRM/DB/APIs requires additional engineering.
+> 30-minute guide to build a minimal business-tool prototype.
+> Real CRM/DB/API/permission integration requires additional engineering.
 
 ## Overview
 
@@ -12,7 +12,7 @@ src/tools/business/    ← swap in your tools
 src/agents/personas/   ← swap in your agent config
 ```
 
-`src/core/`, `src/server/`, `src/ui/` are designed as stable layers — most changes happen in `tools/` and `agents/`.
+Core/server/ui are intended to stay stable for simple prototypes. Most changes happen in `tools/` and `agents/`.
 
 ## Step 1: Define Your Tools
 
@@ -113,7 +113,7 @@ examples/
         └── sample_kb_article.txt
 ```
 
-**Time: ~30 minutes for a minimal prototype.**
+**Time: ~30 minutes for a mock/demo prototype. Real CRM/DB/API/permission integration requires additional engineering.**
 
 ## What this covers vs. what's missing
 
