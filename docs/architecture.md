@@ -23,7 +23,7 @@ Browser (React UI)                curl / Postman
 │  ┌──────────────────────────────────┐    │
 │  │       ReActAgent.run()           │    │
 │  │  ┌──────────────────────────┐    │    │
-│  │  │ 1. LLM thinks → JSON     │    │    │
+│  │  │ 1. LLM returns JSON      │    │    │
 │  │  │ 2. "tool_call" → execute │    │    │
 │  │  │ 3. Tool result → LLM     │    │    │
 │  │  │ 4. "final" → answer      │    │    │
