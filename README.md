@@ -32,8 +32,25 @@ pip install -r requirements.txt
 cp .env.example .env
 # Edit .env: set LLM_API_KEY=your-deepseek-key
 
+# CLI
 python -m src.main "What is 15 * 7?"
+
+# API Server
+uvicorn src.server.main:app --reload
+# → http://localhost:8000/docs
+
+# React UI
+cd src/ui && npm install && npm run dev
+# → http://localhost:5173
 ```
+
+## Documentation
+
+| Doc | For |
+|-----|-----|
+| [Architecture](docs/architecture.md) | Request flow diagram, layer responsibility, SSE event trace |
+| [Resume Evidence](docs/resume_evidence.md) | STAR bullets, interview Q&A, test coverage map, demo commands |
+| [Customization Guide](docs/customize.md) | 30-min guide: add business tools for any company JD |
 
 ## How It Works
 
