@@ -1,0 +1,16 @@
+AI Agent Intern
+
+We are looking for an AI Agent intern to join our engineering team.
+
+Requirements:
+- Proficient in Python and FastAPI
+- Experience with LLM API integration (OpenAI, DeepSeek)
+- Understanding of RAG (Retrieval-Augmented Generation)
+- Familiarity with Docker and Git
+- Bonus: experience with LangChain, React, or TypeScript
+- Bonus: built personal AI Agent projects
+
+Responsibilities:
+- Design and implement tool-calling agent workflows
+- Integrate LLMs into existing backend services
+- Write tests and documentation for AI modules

@@ -1,0 +1,13 @@
+Skills:
+- Python (2 years)
+- FastAPI (1 year)
+- Docker (6 months)
+- Git (2 years)
+- SQL (1 year)
+- LLM API integration (DeepSeek, OpenAI)
+- RAG basics (keyword retrieval + ChromaDB)
+- pytest (1 year)
+
+Projects:
+- Internship Tracker API: FastAPI + SQLite + Redis + LLM matching
+- Agent Skeleton: ReAct agent loop + tool registry + SSE streaming
