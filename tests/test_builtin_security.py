@@ -45,7 +45,7 @@ class TestReadFileSecurity:
         assert "Access denied" in result["error"]
 
     def test_absolute_path_blocked(self):
-        result = read_file("C:\\Windows\\System32\\config\\SAM")
+        result = read_file("/etc/passwd")
         assert "Access denied" in result["error"]
 
     def test_nonexistent_file(self):

@@ -93,7 +93,8 @@ _BLOCKED_NAMES = {".env", ".gitignore", ".gitconfig"}
 
 def _is_safe_path(path: str) -> bool:
     import os
-    if os.path.isabs(path):
+    import re
+    if os.path.isabs(path) or re.match(r"^[A-Za-z]:[/\\]", path):
         return False
     if ".." in path:
         return False
